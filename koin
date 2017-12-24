@@ -5,20 +5,20 @@ import requests,time,os
 while True:
 	res = requests.get("https://koinex.in/api/ticker")
 	response = res.text.split('"')
-	print 'Realtime rates from Koinex'
-	print '\n'
-	print 'BTC : '+response[5]
-	print 'ETH : '+response[9]
-	print 'BCH : '+response[13]
-	print 'XRP : '+response[17]
-	print 'LTC : '+response[21]
-	print '\n'
-	print 'Realtime Marketcap info from Coinmarketcap'
-	print '\n'
+	print('Realtime rates from Koinex')
+	print('\n')
+	print('BTC : '+response[5])
+	print('ETH : '+response[9])
+	print('BCH : '+response[13])
+	print('XRP : '+response[17])
+	print('LTC : '+response[21])
+	print('\n')
+	print('Realtime Marketcap info from Coinmarketcap')
+	print('\n')
 	res2 = requests.get('https://api.coinmarketcap.com/v1/global/')
 	response2 = res2.text.split(':')
-	print "Total MarketCap in USD : "+response2[1].split(',')[0]
-	print "Bitcoin Dominance : "+response2[3].split(',')[0]+'%'
+	print("Total MarketCap in USD : "+response2[1].split(',')[0])
+	print("Bitcoin Dominance : "+response2[3].split(',')[0]+'%')
 	#Refreshes every 25 seconds to avoid being rate limited by Cloudflare
 	time.sleep(30)
 	os.system('clear')
