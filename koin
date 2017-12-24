@@ -1,6 +1,4 @@
-#!/usr/bin/python
-
-#/data/data/com.termux/files/usr/bin/python
+#!/data/data/com.termux/files/usr/bin/python
 import requests,time,os
 while True:
 	res = requests.get("https://koinex.in/api/ticker")
