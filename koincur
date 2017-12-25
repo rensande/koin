@@ -16,4 +16,10 @@ res2 = requests.get('https://api.coinmarketcap.com/v1/global/')
 response2 = res2.text.split(':')
 print("Total MarketCap in USD : "+response2[1].split(',')[0])
 print("Bitcoin Dominance : "+response2[3].split(',')[0]+'%')
-	
+print('\n')
+print('Rates from zebpay')
+print('\n')
+
+
+res3 = requests.get('https://www.zebapi.com/api/v1/market/ticker/btc/inr')
+print(res3.text)
