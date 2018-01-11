@@ -1,0 +1,25 @@
+#!/usr/bin/python
+'''
+for termux
+/data/data/com.termux/files/usr/bin/python
+'''
+
+#/data/data/com.termux/files/usr/bin/python
+import requests,time,os
+while True:
+        os.system('clear')
+        res = requests.get("https://koinex.in/api/ticker")
+        response = res.text.split('"')
+        print('Realtime rates from Koinex')
+        print('ETH : '+response[9])
+        print('XRP : '+response[13])
+        print('\nRealtime Marketcap info from Coinmarketcap')
+        eth = requests.get('https://api.coinmarketcap.com/v1/ticker/ethereum/')
+        xrp = requests.get('https://api.coinmarketcap.com/v1/ticker/ripple/')
+        ethereum = eth.text
+        ripple = xrp.text
+        print('Ethereum\n--------')
+        print(ethereum)
+        print('Ripple\n------')
+        print(ripple)
+        time.sleep(30)
